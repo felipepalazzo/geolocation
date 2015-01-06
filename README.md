@@ -80,7 +80,7 @@ Here are a few suggestions of tools to develop your responsive app:
     * How to run the suite of automated tests (unit tests, BDD tests, etc...).
     * Which JS libraries you've decided to use for this challenge.
     * Mention anything that was asked but not delivered and why, and any additional comments.
-* Any questions, please send an email to **ac.brazil.recruitment@avenuecode.com**
+* Any questions, please send an email to **recruitment.engineering@avenuecode.com**
 
 ### Evaluation Criteria ###
 
