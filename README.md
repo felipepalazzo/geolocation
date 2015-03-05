@@ -11,17 +11,18 @@
 * You have to keep the current features working.
 
 ### Functional / Acceptance Criteria ###
-* The new form input field should only accept website domains, as "www.nytimes.com",  "nytimes.com" or "g1.com.br" or "www.g1.com.br".
-* When the user hits the **Locate** button, an asynchronous call should be made to http://freegeoip.net/json/:host, where *:host* corresponds to the user input.
+* The new form input field should only accept website domains starting with "www."  or with the host name, e.g., "www.nytimes.com", "nytimes.com" or "g1.com.br" or "www.g1.com.br".
+* When the user hits the Locate button, an asynchronous call should be made to http://freegeoip.net/json/:host, where :host corresponds to the user input.
 * If this async call is successful, a second panel must be rendered, below the form, displaying a map showing the website's physical location from the latitude and longitude coordinates of the JSON response.
-* When the user hits the existing **My location** button, his position must also be displayed on the map (besides the website's location).
-* When the user hits the **Reset location** button, the user location must be cleared off from the map (but the website's location should still be displayed if any).
+* When the user hits the existing My location button, his position must also be displayed on the map, **alone or besides a website location** if the user used that feature before.
+* When the user hits the Reset location button, the user location must be cleared off from the map (but the website's location should still be displayed if any).
 * You need to add consistent user input and output validations for every possible scenario.
+
 
 ### Non-Functional / Acceptance Criteria ###
 * We urge that you employ a web app framework such as Backbone.js, AngularJS, Ember.js, Knockout.js, React, Meteor.
 * You must leverage reusability with the existing code. You might have to refactor some of it, specially when you are adopting a web framework. Make sure to keep the existing functionality up and also to fix any bugs you might run into.
-* You have to cover all you code with JS testing. You can pick a framework of your preference like Jasmine, Chai, Mocha, QUnit.
+* It is expected that you cover at least 80%+ of your code with JS testing. You can pick a framework of your preference like Jasmine, Chai, Mocha, QUnit.
 * We also recommend that you use a presentation framework such as Twitter Bootstrap or Zurb Foundation.
 
 ### Technical Details ###
@@ -71,6 +72,7 @@ Here are a few suggestions of tools to develop your responsive app:
 1. You must fork this repository into a private repository on your own account and push your code in there.
 1. Once finished, you must give the user **ac-recruitment** read permission on your repository so that you can be evaluated. Then, please contact back your recruiter and he will get an engineer to evaluate your test.
 1. After you are evaluated, the recruiter will remove your read permission from the original repository.
+1. Its very important that these steps are followed accordingly, as your git and overall version control skill will also be evaluated.
 
 ### Format ###
 
@@ -80,13 +82,15 @@ Here are a few suggestions of tools to develop your responsive app:
     * How to run the suite of automated tests (unit tests, BDD tests, etc...).
     * Which JS libraries you've decided to use for this challenge.
     * Mention anything that was asked but not delivered and why, and any additional comments.
+* Unclear or incomplete README instructions may subtract from your overall evaluation.
 * Any questions, please send an email to **recruitment.engineering@avenuecode.com**
 
 ### Evaluation Criteria ###
 
-1. Functional and non-functional acceptance criteria delivery
-1. Code quality: structure, modularization, reuse
-1. Code legibility and elegancy
-1. Frameworks usage
-1. Test coverage
-1. Number of bugs
+1. Functional and non-functional acceptance criteria delivery.
+1. Code quality: structure, modularization, reuse.
+1. Code legibility and elegancy.
+1. Frameworks usage.
+1. Test coverage.
+
+We have both functional and non-functional acceptance criterias, so we suggest that you pay attention to both. Furthermore, the quality of the application (number of bugs found), may also add or subtractg points from the candidate.
