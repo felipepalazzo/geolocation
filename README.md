@@ -93,4 +93,4 @@ Here are a few suggestions of tools to develop your responsive app:
 1. Frameworks usage.
 1. Test coverage.
 
-We have both functional and non-functional acceptance criterias, so we suggest that you pay attention to both. Furthermore, the quality of the application (number of bugs found), may also add or subtractg points from the candidate.
+We have both functional and non-functional acceptance criterias, so we suggest that you pay attention to both. Furthermore, the quality of the application (number of bugs found), may also add or subtract points from the candidate.
