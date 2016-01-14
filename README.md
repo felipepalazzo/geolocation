@@ -26,21 +26,24 @@
 * We also recommend that you use a presentation framework such as Twitter Bootstrap or Zurb Foundation.
 
 ### Technical Details ###
-You should receive a JSON response from http://freegeoip.net/json/:host similar to:
+You should receive a JSON response from http://ip-api.com/json/:host similar to:
 
 ```
 {  
-   "ip":"170.149.172.130",
-   "country_code":"US",
-   "country_name":"United States",
-   "region_code":"WA",
-   "region_name":"Washington",
-   "city":"Seattle",
-   "zipcode":"",
-   "latitude":47.6062,
-   "longitude":-122.3321,
-   "metro_code":"819",
-   "area_code":"206"
+   "as":"AS20044 S/A ESTADO DE MINAS",
+   "city":"Belo Horizonte",
+   "country":"Brazil",
+   "countryCode":"BR",
+   "isp":"S/a Estado De Minas",
+   "lat":-19.9191,
+   "lon":-43.9386,
+   "org":"S/a Estado De Minas",
+   "query":"200.188.178.56",
+   "region":"MG",
+   "regionName":"Minas Gerais",
+   "status":"success",
+   "timezone":"America/Sao_Paulo",
+   "zip":""
 }
 ```
 
