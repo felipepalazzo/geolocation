@@ -7,7 +7,7 @@
 ### Business Narrative / Scenario ###
 * GeoLocation is a working web application which aims to retrieve details about the user's location. 
 * You need to augment GeoLocation with a new form that will allow the user to find out the physical location of websites, by displaying its hosting position on a map. 
-* This new form will consist in a text field for the user to input the website domain, and also a "Locate" button.
+* This new form will consist of a text field for the user to input the website domain.  It will also need a "Locate" button.
 * You have to keep the current features working.
 
 ### Functional / Acceptance Criteria ###
@@ -15,8 +15,8 @@
 * When the user hits the Locate button, an asynchronous call should be made to http://ip-api.com/json/:host, where :host corresponds to the user input.
 * If this async call is successful, a second panel must be rendered, below the form, displaying a map showing the website's physical location from the latitude and longitude coordinates of the JSON response.
 * When the user hits the existing My location button, his position must also be displayed on the map, **alone or besides a website location** if the user used that feature before.
-* When the user hits the Reset location button, the user location must be cleared off from the map (but the website's location should still be displayed if any).
-* You need to add consistent user input and output validations for every possible scenario.
+* When the user hits the Reset location button, the user location must be cleared off from the map (but the website's location should still be displayed, if any).
+* You should handle user input and server response validations for all scenarios.
 
 
 ### Non-Functional / Acceptance Criteria ###
@@ -70,7 +70,7 @@ Here are a few suggestions of tools to develop your responsive app:
 
 ### Delivery Instructions ###
 
-1. You must provide his BitBucket username. A free BitBucket account can be created at http://bitbucket.org
+1. You must provide your BitBucket username. A free BitBucket account can be created at http://bitbucket.org
 1. The recruiter will give you read permission to a repository named **ui-challenge**, at https://bitbucket.org/ac-recruitment/ui-challenge
 1. You must fork this repository into a private repository on your own account and push your code in there.
 1. Once finished, you must give the user **ac-recruitment** read permission on your repository so that you can be evaluated. Then, please contact back your recruiter and he will get an engineer to evaluate your test.
@@ -96,4 +96,4 @@ Here are a few suggestions of tools to develop your responsive app:
 1. Frameworks usage.
 1. Test coverage.
 
-We have both functional and non-functional acceptance criterias, so we suggest that you pay attention to both. Furthermore, the quality of the application (number of bugs found), may also add or subtract points from the candidate.
+We have both functional and non-functional acceptance criterias, so we suggest that you pay attention to both. Furthermore, the quality of the application (number of bugs found) will factor into the evaluation.
