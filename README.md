@@ -97,13 +97,13 @@ Here are a few suggestions of tools to develop your responsive app:
 
 * HTML, CSS, Site Responsiveness
 * Functional and Non Function Criteria
-* Task Automation
 * Unit Tests
 * Project folder structure
 * JS & Code Logic & configuration
 * Framework & Design Patterns
-* Documentation
 * Git/versioning control
+* Documentation
+* Task Automation
 
 We have both functional and non-functional acceptance criteria, so it is suggested that you pay attention to both. Furthermore, the quality of the application (number of bugs found) will factor into the evaluation.
 
