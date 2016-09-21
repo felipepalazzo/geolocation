@@ -20,10 +20,14 @@
 
 
 ### Non-Functional / Acceptance Criteria ###
-* We urge that you employ a web app framework such as Backbone.js, AngularJS, Ember.js, Knockout.js, React, Meteor.
-* You must leverage reusability with the existing code. You might have to refactor some of it, specially when you are adopting a web framework. Make sure to keep the existing functionality up and also to fix any bugs you might run into.
+* It is advisable that you employ a web app framework such as Backbone.js, AngularJS, Ember.js, Knockout.js, React, Meteor.
+* You must leverage reusability with the existing code. You might have to refactor some of it, especially when adopting a web framework. Make sure to keep the existing functionality up and also to fix any bugs you might run into.
 * It is expected that you cover at least 80%+ of your code with JS testing. You can pick a framework of your preference like Jasmine, Chai, Mocha, QUnit.
-* We also recommend that you use a presentation framework such as Twitter Bootstrap or Zurb Foundation.
+* Also, it is recommended that you use a presentation framework such as Twitter Bootstrap, Zurb Foundation or any other.
+* Your code skills will also be evaluated, so apply everything you see fit, even with this being a simple app. Bonus points for: organized code, configuration files/objects, design patterns.
+* Task automation (grunt, gulp, and so on) is a nice addition to your challenge.
+* It is expected that you know how to proper commit changes in Git, which means you should present meaningful commits and descriptions.
+* Well organized projects have descriptive Readme files. Therefore you should provide information about critical decisions, project setup and important announcements.
 
 ### Technical Details ###
 You should receive a JSON response from http://ip-api.com/json/:host similar to:
@@ -88,12 +92,20 @@ Here are a few suggestions of tools to develop your responsive app:
 * Unclear or incomplete README instructions may subtract from your overall evaluation.
 * Any questions, please send an email to **recruitment.engineering@avenuecode.com**
 
+
 ### Evaluation Criteria ###
 
-1. Functional and non-functional acceptance criteria delivery.
-1. Code quality: structure, modularization, reuse.
-1. Code legibility and elegancy.
-1. Frameworks usage.
-1. Test coverage.
+* HTML, CSS, Site Responsiveness
+* Functional and Non Function Criteria
+* Task Automation
+* Unit Tests
+* Project folder structure
+* JS & Code Logic & configuration
+* Framework & Design Patterns
+* Documentation
+* Git/versioning control
 
-We have both functional and non-functional acceptance criterias, so we suggest that you pay attention to both. Furthermore, the quality of the application (number of bugs found) will factor into the evaluation.
+We have both functional and non-functional acceptance criteria, so it is suggested that you pay attention to both. Furthermore, the quality of the application (number of bugs found) will factor into the evaluation.
+
+### Considerations ###
+As the project is relatively small, we expect you to achieve the requirements without using any code/file/folder structure auto generator tools.
