@@ -21,13 +21,13 @@
 
 ### Non-Functional / Acceptance Criteria ###
 * It is advisable that you employ a web app framework such as Backbone.js, AngularJS, Ember.js, Knockout.js, React, Meteor.
-* You must leverage reusability with the existing code. You might have to refactor some of it, especially when adopting a web framework. Make sure to keep the existing functionality up and also to fix any bugs you might run into.
+* You must leverage reusability with the existing code. You might have to refactor some of it, especially when adopting a web framework. Make sure to keep the existing functionality up and running and also to fix any bugs you might run into.
 * It is expected that you cover at least 80%+ of your code with JS testing. You can pick a framework of your preference like Jasmine, Chai, Mocha, QUnit.
 * Also, it is recommended that you use a presentation framework such as Twitter Bootstrap, Zurb Foundation or any other.
-* Your code skills will also be evaluated, so apply everything you see fit, even with this being a simple app. Bonus points for: organized code, configuration files/objects, design patterns.
+* Your coding skills will be evaluated, so apply everything you see fit, even with this being a simple app. Bonus points for: organized code, configuration files/objects, design patterns.
 * Task automation (grunt, gulp, and so on) is a nice addition to your challenge.
-* It is expected that you know how to proper commit changes in Git, which means you should present meaningful commits and descriptions.
-* Well organized projects have descriptive Readme files. Therefore you should provide information about critical decisions, project setup and important announcements.
+* It is expected that you know how to properly commit changes in Git, which means you should present meaningful commits with descriptive commit messages.
+* Well organized projects have descriptive Readme files. Therefore you should provide as much as you can every useful information such as fundamental decisions taken, the project setup steps, how to execute the unit tests, and any further call outs of any kind.
 
 ### Technical Details ###
 You should receive a JSON response from http://ip-api.com/json/:host similar to:
