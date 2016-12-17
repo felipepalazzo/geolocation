@@ -5,18 +5,32 @@ export default Marionette.View.extend({
   tagName: 'form',
   template: template,
   ui: {
-    button: '[data-ui="button"]',
+    myLocationBtn: '[data-ui="my-location"]',
+    hostLocationBtn: '[data-ui="host-location"]',
+    host: 'input[name="host"]',
   },
   events: {
-    'click @ui.button': 'showGeoLocation',
+    'click @ui.myLocationBtn': 'showGeoLocation',
+    'click @ui.hostLocationBtn': 'showHostLocation',
   },
   showGeoLocation() {
-    let deferred = this.getGeoLocation();
+    let deferred = this.getMyGeoLocation();
     deferred.done((response) => {
       this.model.set(response);
     });
   },
-  getGeoLocation() {
+  showHostLocation() {
+    debugger;
+    let host = this.ui.host.val();
+    let deferred = this.getHostGeoLocation(host);
+    deferred.done((response) => {
+      // this.model.set(response);
+    });
+  },
+  getMyGeoLocation() {
     return $.get('http://ip-api.com/json/');
+  },
+  getHostGeoLocation(host) {
+    return $.get('http://ip-api.com/json/' + host);
   },
 });
