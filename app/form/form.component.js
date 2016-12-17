@@ -15,17 +15,18 @@ export default Marionette.View.extend({
   },
   showGeoLocation() {
     let deferred = this.getMyGeoLocation();
-    deferred.done((response) => {
-      this.model.set(response);
-    });
+    deferred
+      .done((response) => {
+        this.triggerMethod('click:myLocation', response);
+      });
   },
   showHostLocation() {
-    debugger;
     let host = this.ui.host.val();
     let deferred = this.getHostGeoLocation(host);
-    deferred.done((response) => {
-      // this.model.set(response);
-    });
+    deferred
+      .done((response) => {
+        this.triggerMethod('click:locate', response);
+      });
   },
   getMyGeoLocation() {
     return $.get('http://ip-api.com/json/');
