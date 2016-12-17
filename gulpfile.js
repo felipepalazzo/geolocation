@@ -6,21 +6,21 @@ var browserSync = require('browser-sync').create();
 
 var watch = function() {
   browserSync.init({
-    server: './public'
+    server: './public',
   });
   gulp.watch('app/**/*', ['build']);
   gulp.watch('public/*').on('change', browserSync.reload);
 };
 
-var build = function () {
+var build = function() {
   // set up the browserify instance on a task basis
-  var b = browserify('./app/initialize.js', {
+  var b = browserify('./app/init.js', {
     transform: [
       ['babelify', {
-        'presets': ['es2015']
+        'presets': ['es2015'],
       }],
-      ['jstify']
-    ]
+      ['jstify'],
+    ],
   });
 
   copy();
@@ -32,17 +32,22 @@ var build = function () {
     .pipe(browserSync.stream());
 };
 
-var copy = function () {
+var copy = function() {
     return gulp
       .src(['app/assets/index.html', 'app/styles/app.css'])
       .pipe(gulp.dest('public'))
       .pipe(browserSync.stream());
 };
 
-var start = function () {
+var start = function() {
   build();
   watch();
 };
 
-gulp.task('build', function() { return build(); });
-gulp.task('start', function() { return start(); });
+gulp.task('build', function() {
+  return build();
+});
+
+gulp.task('start', function() {
+  return start();
+});
