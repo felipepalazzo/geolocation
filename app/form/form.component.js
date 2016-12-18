@@ -1,9 +1,10 @@
-import {Marionette, $} from '../../vendor/vendor';
+import {Marionette, $, _} from '../../vendor/vendor';
 import template from './form.template.jst.ejs';
 
 export default Marionette.View.extend({
   tagName: 'form',
   template: template,
+  DEBOUNCE_WAIT_IN_MS: 500,
   ui: {
     myLocationBtn: '[data-ui="my-location"]',
     hostLocationBtn: '[data-ui="host-location"]',
@@ -11,9 +12,25 @@ export default Marionette.View.extend({
     host: 'input[name="host"]',
   },
   events: {
-    'click @ui.myLocationBtn': 'showMyLocation',
-    'click @ui.hostLocationBtn': 'showHostLocation',
     'click @ui.resetBtn': 'resetMyLocation',
+    'click @ui.myLocationBtn': 'onMyLocationBtnClick',
+    'click @ui.hostLocationBtn': 'onHostLocationBtnClick',
+  },
+  initialize() {
+    this._showMyLocation = _.debounce(
+      this.showMyLocation.bind(this),
+      this.DEBOUNCE_WAIT_IN_MS
+    );
+    this._showHostLocation = _.debounce(
+      this.showHostLocation.bind(this),
+      this.DEBOUNCE_WAIT_IN_MS
+    );
+  },
+  onMyLocationBtnClick() {
+    this._showMyLocation();
+  },
+  onHostLocationBtnClick() {
+    this._showHostLocation();
   },
   showMyLocation() {
     let deferred = this.getMyGeoLocation();
@@ -28,8 +45,10 @@ export default Marionette.View.extend({
   showHostLocation() {
     let host = this.ui.host.val();
     let deferred = this.getHostGeoLocation(host);
+    this.togglehostLocationBtn();
     deferred
       .done((response) => {
+        this.togglehostLocationBtn();
         if (response.message) {
 
         } else {
@@ -37,8 +56,12 @@ export default Marionette.View.extend({
         }
       })
       .fail((response) => {
+        this.togglehostLocationBtn();
         console.error(response.statusText);
       });
+  },
+  togglehostLocationBtn() {
+    this.ui.hostLocationBtn.toggleClass('disabled');
   },
   resetMyLocation() {
     this.triggerMethod('click:reset');
