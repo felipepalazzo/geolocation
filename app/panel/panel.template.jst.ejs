@@ -4,31 +4,73 @@
     <tbody>
       <tr>
         <td>IP</td>
-        <td class="text-right"><%= query %> <span class="glyphicon glyphicon-question-sign"></span></td>
+        <td class="text-right">
+          <%= query %>
+          <i
+          class="glyphicon glyphicon-question-sign"
+          data-ui="tooltip"
+          data-field="IP"></i>
+        </td>
       </tr>
       <tr>
         <td>Country</td>
-        <td class="text-right"><%= country %></td>
+        <td class="text-right">
+          <%= country %>
+          <i
+          class="glyphicon glyphicon-question-sign"
+          data-ui="tooltip"
+          data-field="country"></i>
+        </td>
       </tr>
       <tr>
         <td>Region</td>
-        <td class="text-right"><%= regionName %></td>
+        <td class="text-right">
+          <%= regionName %>
+          <i
+          class="glyphicon glyphicon-question-sign"
+          data-ui="tooltip"
+          title="This is your region from ISP <%= isp %>"></i>
+        </td>
       </tr>
       <tr>
         <td>City</td>
-        <td class="text-right"><%= city %></td>
+        <td class="text-right">
+          <%= city %>
+          <i
+          class="glyphicon glyphicon-question-sign"
+          data-ui="tooltip"
+          data-field="city"></i>
+        </td>
       </tr>
       <tr>
         <td>Time Zone</td>
-        <td class="text-right"><%= timezone %></td>
+        <td class="text-right">
+          <%= timezone %>
+          <i
+          class="glyphicon glyphicon-question-sign"
+          data-ui="tooltip"
+          data-field="timezone"></i>
+        </td>
       </tr>
       <tr>
         <td>Latitude</td>
-        <td class="text-right"><%= lat %></td>
+        <td class="text-right">
+          <%= lat %>
+          <i
+          class="glyphicon glyphicon-question-sign"
+          data-ui="tooltip"
+          data-field="latitude"></i>
+        </td>
       </tr>
       <tr>
         <td>Longitude</td>
-        <td class="text-right"><%= lon %></td>
+        <td class="text-right">
+          <%= lon %>
+          <i
+          class="glyphicon glyphicon-question-sign"
+          data-ui="tooltip"
+          data-field="longitude"></i>
+        </td>
       </tr>
     </tbody>
   </table>
