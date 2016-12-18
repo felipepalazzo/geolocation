@@ -7,17 +7,22 @@ export default Marionette.View.extend({
   ui: {
     myLocationBtn: '[data-ui="my-location"]',
     hostLocationBtn: '[data-ui="host-location"]',
+    resetBtn: '[data-ui="reset"]',
     host: 'input[name="host"]',
   },
   events: {
-    'click @ui.myLocationBtn': 'showGeoLocation',
+    'click @ui.myLocationBtn': 'showMyLocation',
     'click @ui.hostLocationBtn': 'showHostLocation',
+    'click @ui.resetBtn': 'resetMyLocation',
   },
-  showGeoLocation() {
+  showMyLocation() {
     let deferred = this.getMyGeoLocation();
     deferred
       .done((response) => {
         this.triggerMethod('click:myLocation', response);
+      })
+      .fail((response) => {
+        console.error(response.statusText);
       });
   },
   showHostLocation() {
@@ -25,8 +30,18 @@ export default Marionette.View.extend({
     let deferred = this.getHostGeoLocation(host);
     deferred
       .done((response) => {
-        this.triggerMethod('click:locate', response);
+        if (response.message) {
+
+        } else {
+          this.triggerMethod('click:locate', response);
+        }
+      })
+      .fail((response) => {
+        console.error(response.statusText);
       });
+  },
+  resetMyLocation() {
+    this.triggerMethod('click:reset');
   },
   getMyGeoLocation() {
     return $.get('http://ip-api.com/json/');
