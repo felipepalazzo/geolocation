@@ -1,7 +1,16 @@
 <fieldset>
-  <button type="button" class="btn btn-default" data-ui="my-location">My Location</button>
-  <button type="button" class="btn btn-default" data-ui="reset">Reset</button>
-  <br>
-  <input type="text" name="host" class="form-control">
-  <button type="button" class="btn btn-default" data-ui="host-location">Locate</button>
+  <div class="form-group">
+    <button type="button" class="btn btn-success" data-ui="my-location">
+      <i class="glyphicon glyphicon-user"></i> My Location
+    </button>
+    <button type="button" class="btn btn-danger" data-ui="reset"><i class="glyphicon glyphicon-remove"></i> Reset</button>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <input type="text" name="host" class="form-control" placeholder="Website domain">
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-primary" data-ui="host-location">Locate</button>
+      </span>
+    </div>
+  </div>
 </fieldset>

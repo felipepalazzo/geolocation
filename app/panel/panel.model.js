@@ -2,7 +2,7 @@ import {_, Backbone} from '../../vendor/vendor';
 
 export default Backbone.Model.extend({
   defaults: {
-    query: '',
+    query: '0.0.0.0',
     country: '',
     regionName: '',
     city: '',
