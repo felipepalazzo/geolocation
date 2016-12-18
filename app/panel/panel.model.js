@@ -11,7 +11,7 @@ export default Backbone.Model.extend({
     lon: '',
     isp: '',
   },
-  clearAll() {
+  resetDefaults() {
     let attrs = _.clone(this.attributes);
     _.each(attrs, (val, key) => {
       key !== 'query' ? this.set(key, '') : this.set(key, '0.0.0.0');

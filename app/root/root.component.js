@@ -39,7 +39,7 @@ export default Marionette.View.extend({
     this.mapModel.set(host);
   },
   resetMyLocation() {
-    this.panelModel.clearAll();
+    this.panelModel.resetDefaults();
     this.channel.trigger('reset:location');
   },
   showMap(host) {
