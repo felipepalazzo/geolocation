@@ -1,15 +1,16 @@
-import {Marionette, $, _} from '../../vendor/vendor';
+import {Marionette, $, _, Radio} from '../../vendor/vendor';
 import template from './panel.template.jst.ejs';
 window.jQuery = $;
 require('bootstrap');
 
 export default Marionette.View.extend({
   template: template,
-  modelEvents: {
-    'change lat lon': 'render',
-  },
   ui: {
     tooltipEl: '[data-ui="tooltip"]',
+  },
+  initialize() {
+    const channel = Radio.channel('notify');
+    this.listenTo(channel, 'reset:location add:location', this.render);
   },
   onRender() {
     this.toggleIcon();
