@@ -16,7 +16,7 @@ export default Marionette.View.extend({
   events: {
     'click @ui.resetBtn': 'resetMyLocation',
     'click @ui.myLocationBtn': 'onMyLocationBtnClick',
-    'click @ui.hostLocationBtn': 'onHostLocationBtnClick',
+    'submit': 'onSubmit',
   },
   initialize() {
     this._showMyLocation = _.debounce(
@@ -31,11 +31,12 @@ export default Marionette.View.extend({
   onMyLocationBtnClick() {
     this._showMyLocation();
   },
-  onHostLocationBtnClick() {
+  onSubmit(evt) {
+    evt.preventDefault();
     this._showHostLocation();
   },
   showMyLocation() {
-    let deferred = this.getMyGeoLocation();
+    let deferred = this.getMyLocation();
     deferred
       .done((response) => {
         this.triggerMethod('click:myLocation', response);
@@ -51,8 +52,8 @@ export default Marionette.View.extend({
       this.showErrorMessage('Please type website domain');
       return;
     }
-    let deferred = this.getHostGeoLocation(host);
     this.togglehostLocationBtn();
+    let deferred = this.getHostGeoLocation(host);
     deferred
       .done((response) => {
         this.togglehostLocationBtn();
@@ -85,7 +86,7 @@ export default Marionette.View.extend({
   resetMyLocation() {
     this.triggerMethod('click:reset');
   },
-  getMyGeoLocation() {
+  getMyLocation() {
     return $.get('http://ip-api.com/json/');
   },
   getHostGeoLocation(host) {

@@ -18,6 +18,12 @@ export default Marionette.View.extend({
       zoom: this.defaultOpts.zoom,
     });
   },
+  setMapPosition(lat, lng) {
+    this.map.setCenter({
+      lat: lat,
+      lng: lng,
+    });
+  },
   setMyLocationMark() {
     let lat = this.myLocation.get('lat');
     let lng = this.myLocation.get('lon');
@@ -32,13 +38,13 @@ export default Marionette.View.extend({
   resetMyLocationMark() {
     this.myLocationMark.setMap(null);
   },
+  createMyLocationMark() {
+    this.myLocationMark = new google.maps.Marker();
+  },
   createHostLocationMark() {
     this.mark = new google.maps.Marker({
       map: this.map,
     });
-  },
-  createMyLocationMark() {
-    this.myLocationMark = new google.maps.Marker();
   },
   onLatLngChange() {
     this.setMark();
@@ -50,12 +56,6 @@ export default Marionette.View.extend({
       lng: this.model.get('lon'),
     });
     this.mark.setAnimation(google.maps.Animation.DROP);
-  },
-  setMapPosition(lat, lng) {
-    this.map.setCenter({
-      lat: lat,
-      lng: lng,
-    });
   },
   onRender() {
     this.createMap();

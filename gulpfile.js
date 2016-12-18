@@ -4,6 +4,7 @@ var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
+var uglify = require('gulp-uglify');
 
 var watch = function() {
   browserSync.init({
@@ -30,6 +31,7 @@ var build = function() {
   return b.bundle()
     .pipe(source('app.js'))
     .pipe(buffer())
+    .pipe(uglify())
     .pipe(gulp.dest('./public'))
     .pipe(browserSync.stream());
 };
