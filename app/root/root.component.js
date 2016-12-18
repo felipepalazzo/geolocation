@@ -29,7 +29,7 @@ export default Marionette.View.extend({
   },
   onMyLocationClick(model) {
     this.panelModel.set(model);
-    this.channel.trigger('click:location');
+    this.channel.trigger('add:location');
   },
   onLocateClick(host) {
     if ( !this.getRegion('mapRegion').hasView() ) {
@@ -39,6 +39,7 @@ export default Marionette.View.extend({
   },
   resetMyLocation() {
     this.panelModel.clearAll();
+    this.channel.trigger('reset:location');
   },
   showMap(host) {
     this.showChildView('mapRegion', new MapView({

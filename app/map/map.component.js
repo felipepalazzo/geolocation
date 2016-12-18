@@ -10,8 +10,8 @@ export default Marionette.View.extend({
     const channel = Radio.channel('notify');
     this.myLocation = options.myLocation;
     this.defaultOpts = {zoom: 5};
-    this.listenTo(channel, 'some:event', this.setMyLocationMark);
-    this.listenTo(this.myLocation, 'change:lat lon', this.setMyLocationMark);
+    this.listenTo(channel, 'add:location', this.setMyLocationMark);
+    this.listenTo(channel, 'reset:location', this.resetMyLocationMark);
   },
   createMap() {
     this.map = new google.maps.Map(this.el, {
@@ -19,11 +19,15 @@ export default Marionette.View.extend({
     });
   },
   setMyLocationMark() {
+    this.myLocationMark.setMap(this.map);
     this.myLocationMark.setPosition({
       lat: this.myLocation.get('lat'),
       lng: this.myLocation.get('lon'),
     });
     this.myLocationMark.setAnimation(google.maps.Animation.DROP);
+  },
+  resetMyLocationMark() {
+    this.myLocationMark.setMap(null);
   },
   createHostLocationMark() {
     this.mark = new google.maps.Marker({
@@ -31,9 +35,7 @@ export default Marionette.View.extend({
     });
   },
   createMyLocationMark() {
-    this.myLocationMark = new google.maps.Marker({
-      map: this.map,
-    });
+    this.myLocationMark = new google.maps.Marker();
   },
   onLatLngChange() {
     this.setMark();
