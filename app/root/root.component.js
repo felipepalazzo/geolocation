@@ -8,6 +8,7 @@ import PanelView from '../panel/panel.component';
 
 export default Marionette.View.extend({
   template: template,
+  className: 'container',
   regions: {
     formRegion: '[data-region="form"]',
     panelRegion: '[data-region="panel"]',
