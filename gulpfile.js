@@ -3,6 +3,7 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
 
 var watch = function() {
   browserSync.init({
@@ -24,6 +25,7 @@ var build = function() {
   });
 
   copy();
+  styles();
 
   return b.bundle()
     .pipe(source('app.js'))
@@ -34,7 +36,7 @@ var build = function() {
 
 var copy = function() {
     return gulp
-      .src(['app/assets/index.html', 'app/styles/app.css'])
+      .src(['app/assets/index.html', 'app/styles/main.css'])
       .pipe(gulp.dest('public'))
       .pipe(browserSync.stream());
 };
@@ -42,6 +44,12 @@ var copy = function() {
 var start = function() {
   build();
   watch();
+};
+
+var styles = function() {
+  return gulp.src('app/styles/main.scss')
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(gulp.dest('public/styles'));
 };
 
 gulp.task('build', function() {
