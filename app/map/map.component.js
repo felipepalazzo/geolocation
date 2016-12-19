@@ -13,7 +13,7 @@ export default Marionette.View.extend({
     this.listenTo(channel, 'add:location', this.setMyLocationMark);
     this.listenTo(channel, 'reset:location', this.resetMyLocationMark);
   },
-  createMap() {
+  initMap() {
     this.map = new google.maps.Map(this.el, {
       zoom: this.defaultOpts.zoom,
     });
@@ -38,10 +38,10 @@ export default Marionette.View.extend({
   resetMyLocationMark() {
     this.myLocationMark.setMap(null);
   },
-  createMyLocationMark() {
+  initMyLocationMark() {
     this.myLocationMark = new google.maps.Marker();
   },
-  createHostLocationMark() {
+  initHostLocationMark() {
     this.mark = new google.maps.Marker({
       map: this.map,
     });
@@ -58,8 +58,8 @@ export default Marionette.View.extend({
     this.mark.setAnimation(google.maps.Animation.DROP);
   },
   onRender() {
-    this.createMap();
-    this.createHostLocationMark();
-    this.createMyLocationMark();
+    this.initMap();
+    this.initHostLocationMark();
+    this.initMyLocationMark();
   },
 });

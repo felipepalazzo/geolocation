@@ -19,23 +19,23 @@ export default Marionette.View.extend({
     'submit': 'onSubmit',
   },
   initialize() {
-    this._showMyLocation = _.debounce(
-      this.showMyLocation.bind(this),
+    this._triggerMyLocation = _.debounce(
+      this.triggerMyLocation.bind(this),
       this.DEBOUNCE_WAIT_IN_MS
     );
-    this._showHostLocation = _.debounce(
-      this.showHostLocation.bind(this),
+    this._triggerHostLocation = _.debounce(
+      this.triggerHostLocation.bind(this),
       this.DEBOUNCE_WAIT_IN_MS
     );
   },
   onMyLocationBtnClick() {
-    this._showMyLocation();
+    this._triggerMyLocation();
   },
   onSubmit(evt) {
     evt.preventDefault();
-    this._showHostLocation();
+    this._triggerHostLocation();
   },
-  showMyLocation() {
+  triggerMyLocation() {
     let deferred = this.getMyLocation();
     deferred
       .done((response) => {
@@ -45,7 +45,7 @@ export default Marionette.View.extend({
         console.error(response.statusText);
       });
   },
-  showHostLocation() {
+  triggerHostLocation() {
     let host = this.ui.host.val().trim().replace(/^https?:\/\//gi, '');
     if (!host.length) {
       this.showErrors();
