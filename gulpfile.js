@@ -31,7 +31,6 @@ var build = function() {
   return b.bundle()
     .pipe(source('app.js'))
     .pipe(buffer())
-    .pipe(uglify())
     .pipe(gulp.dest('./public'))
     .pipe(browserSync.stream());
 };
