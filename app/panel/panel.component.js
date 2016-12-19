@@ -5,6 +5,7 @@ require('bootstrap');
 
 export default Marionette.View.extend({
   template: template,
+  className: 'panel panel-primary',
   ui: {
     tooltipEl: '[data-ui="tooltip"]',
   },
